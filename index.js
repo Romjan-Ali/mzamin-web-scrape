@@ -9,6 +9,11 @@ import cors from 'cors'
 
 app.use(cors())
 
+// Keep Replit alive
+app.get("/", (req, res) => {
+    res.send("Scraper is running and alive!");
+});
+
 axiosRetry(axios, {
     retries: 3,
     retryDelay: (retryCount) => {
